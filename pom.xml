@@ -12,15 +12,38 @@
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <selenium.version>4.25.0</selenium.version>
+    <selenium.version>4.51.0</selenium.version>
     <testng.version>7.10.2</testng.version>
     <restassured.version>5.5.0</restassured.version>
     <allure.version>2.27.0</allure.version>
     <aspectj.version>1.9.22</aspectj.version>
-    <log4j.version>2.23.1</log4j.version>
-    <jackson.version>2.17.2</jackson.version>
+    <log4j.version>2.26.1</log4j.version>
+    <jackson.version>2.22.3</jackson.version>
     <suiteXml>testng.xml</suiteXml>
+    <commons-lang3.version>3.18.0</commons-lang3.version>
+    <rhino.version>1.7.14.1</rhino.version>
+    <freemarker.version>2.3.35</freemarker.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons-lang3.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mozilla</groupId>
+        <artifactId>rhino</artifactId>
+        <version>${rhino.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.freemarker</groupId>
+        <artifactId>freemarker</artifactId>
+        <version>${freemarker.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
@@ -66,6 +89,11 @@
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
       <version>${log4j.version}</version>
     </dependency>
   </dependencies>
